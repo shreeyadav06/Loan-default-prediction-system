@@ -98,6 +98,9 @@ Models were trained and evaluated on an 80:20 stratified holdout split:
 
 ### Option C: Running Locally
 ```bash
+# Clone the repo
+git clone https://github.com/shreeyadav06/Loan-default-prediction-system.git
+
 # Install required dependencies
 pip install pandas numpy scikit-learn matplotlib seaborn jupyter
 

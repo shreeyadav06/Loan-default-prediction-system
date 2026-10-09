@@ -14,7 +14,7 @@ Credit evaluation in retail banking involves a critical trade-off between custom
 - **Credit History is the Anchor Feature**: Applicants with a clean credit history (`Credit_History == 1.0`) demonstrate an approval rate of **~79.5%**, whereas applicants with past delinquencies or no compliant history (`Credit_History == 0.0`) have an approval rate of only **~8.2%**. This makes credit history the single highest information-gain attribute.
 - **Household Repayment Capacity Matters More Than Individual Salary**: Raw `ApplicantIncome` showed high right-skewness and weak standalone correlation with approval. Engineering `TotalIncome = ApplicantIncome + CoapplicantIncome` and computing residual cashflow after monthly installment (`BalanceIncome = TotalIncome - EMI`) established far stronger predictive signals for creditworthiness.
 - **Geographic Risk Variations**: Applicants in **Semiurban** areas registered the highest approval rates (~76.8%), compared to Urban (~65.8%) and Rural (~61.5%) areas.
-- **Distribution Normalization**: Continuous variables (`LoanAmount`, `TotalIncome`) exhibited severe right skewness with extreme outliers. A logarithmic transformation ($\log(1+x)$) successfully normalized variance and stabilized gradient updates across linear and ensemble algorithms.
+- **Distribution Normalization**: Continuous variables (`LoanAmount`, `TotalIncome`) exhibited severe right skewness with extreme outliers. A logarithmic transformation (`log(1 + x)`) successfully normalized variance and stabilized gradient updates across linear and ensemble algorithms.
 
 ---
 

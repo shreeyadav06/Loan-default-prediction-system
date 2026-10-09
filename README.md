@@ -50,9 +50,9 @@ The model is trained on the standard Banking Loan Prediction dataset (614 rows x
 ## 3. Feature Engineering
 Engineered financial indicators capture real household repayment capacity:
 1. **`TotalIncome`**: `ApplicantIncome + CoapplicantIncome` (household income).
-2. **`EMI`**: Monthly installment approximation: $\frac{\text{LoanAmount} \times 1000}{\text{Loan\_Amount\_Term}}$.
-3. **`BalanceIncome`**: Residual monthly disposable cashflow: $\text{TotalIncome} - \text{EMI}$.
-4. **`Log Transformations`**: $\log(1 + x)$ applied to `LoanAmount`, `TotalIncome`, and `ApplicantIncome` to eliminate right-skewness and tame leverage points.
+2. **`EMI`**: Monthly installment approximation: `(LoanAmount * 1000) / Loan_Amount_Term`.
+3. **`BalanceIncome`**: Residual monthly disposable cashflow: `TotalIncome - EMI`.
+4. **`Log Transformations`**: `log(1 + x)` applied to `LoanAmount`, `TotalIncome`, and `ApplicantIncome` to eliminate right-skewness and tame leverage points.
 
 ---
 

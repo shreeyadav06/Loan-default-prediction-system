@@ -1,5 +1,4 @@
-# 🏦 Loan Default Prediction System
-### *Day 19 Capstone Project — End-to-End Machine Learning Pipeline*
+# Loan Default Prediction System
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
 [![Kaggle Dataset](https://img.shields.io/badge/Dataset-Kaggle%20Bank%20Loan-blue.svg)](https://www.kaggle.com/datasets/itsmesunil/bank-loan-modelling)
@@ -9,10 +8,10 @@
 
 ---
 
-## 📌 1. Project Overview & Business Problem
+## 1. Project Overview & Business Problem
 In commercial and retail banking, credit risk assessment is a fundamental driver of profitability and solvency. Granting loans to applicants who subsequently default incurs direct financial loss (Non-Performing Loans - NPLs), while rejecting creditworthy applicants incurs opportunity cost and harms market share.
 
-This capstone project implements an end-to-end Machine Learning classification system to predict loan repayment (`Y` vs `N`). The solution incorporates automated missing value handling, financial ratio feature engineering, extensive EDA visualizations, multi-model benchmarking, and hyperparameter tuning.
+This project implements an end-to-end Machine Learning classification system to predict loan repayment (`Y` vs `N`). The solution incorporates automated missing value handling, financial ratio feature engineering, extensive EDA visualizations, multi-model benchmarking, and hyperparameter tuning.
 
 ```mermaid
 flowchart LR
@@ -26,9 +25,9 @@ flowchart LR
 
 ---
 
-## 🗂️ 2. Dataset Schema
+## 2. Dataset Schema
 
-The model is trained on the standard Banking Loan Prediction dataset (614 rows × 13 attributes):
+The model is trained on the standard Banking Loan Prediction dataset (614 rows x 13 attributes):
 
 | Feature Name | Type | Description |
 | :--- | :--- | :--- |
@@ -48,8 +47,8 @@ The model is trained on the standard Banking Loan Prediction dataset (614 rows �
 
 ---
 
-## 🛠️ 3. Feature Engineering
-We engineered high-signal financial variables to capture real repayment capacity:
+## 3. Feature Engineering
+Engineered financial indicators capture real household repayment capacity:
 1. **`TotalIncome`**: `ApplicantIncome + CoapplicantIncome` (household income).
 2. **`EMI`**: Monthly installment approximation: $\frac{\text{LoanAmount} \times 1000}{\text{Loan\_Amount\_Term}}$.
 3. **`BalanceIncome`**: Residual monthly disposable cashflow: $\text{TotalIncome} - \text{EMI}$.
@@ -57,14 +56,14 @@ We engineered high-signal financial variables to capture real repayment capacity
 
 ---
 
-## 📊 4. Key EDA Discoveries
+## 4. Key EDA Discoveries
 * **Credit History is Decisive**: Applicants with `Credit_History == 1.0` achieve an approval rate of **~79.5%**, while those with `0.0` drop to **~8.2%**.
 * **Household vs Individual Earnings**: Standalone `ApplicantIncome` is weakly correlated with approval, but combining co-applicant income in `TotalIncome` strongly differentiates approved applications.
 * **Property Area Impact**: Semiurban areas demonstrate the highest approval rates (~76.8%), followed by Urban (~65.8%) and Rural (~61.5%).
 
 ---
 
-## 🏆 5. Supervised Model Benchmarking
+## 5. Supervised Model Benchmarking
 
 Models were trained and evaluated on an 80:20 stratified holdout split:
 
@@ -74,7 +73,7 @@ Models were trained and evaluated on an 80:20 stratified holdout split:
 | **Decision Tree Classifier** | 78.0% | 0.812 | 0.894 | 0.851 | 0.718 |
 | **Random Forest Classifier (Base)** | 81.3% | 0.816 | 0.952 | 0.878 | 0.785 |
 | **Gradient Boosting Classifier** | 79.7% | 0.806 | 0.940 | 0.867 | 0.760 |
-| **🥇 Tuned Random Forest (GridSearchCV)** | **82.1%** | **0.819** | **0.964** | **0.886** | **0.798** |
+| **Tuned Random Forest (GridSearchCV)** | **82.1%** | **0.819** | **0.964** | **0.886** | **0.798** |
 
 ### Top Predictors by Feature Importance:
 1. `Credit_History` (~42% importance)
@@ -84,12 +83,12 @@ Models were trained and evaluated on an 80:20 stratified holdout split:
 
 ---
 
-## 🚀 6. How to Run
+## 6. How to Run
 
 ### Option A: 1-Click Execution on Google Colab (Recommended)
 1. Open Google Colab: [colab.research.google.com](https://colab.research.google.com/)
 2. Select **Upload** and upload `Loan_Default_Prediction_Capstone.ipynb`.
-3. Select **Runtime → Run all**.
+3. Select **Runtime -> Run all**.
 > *Note: The notebook contains an automated cloud fetcher that automatically downloads `loan_data.csv` if it is not present in the runtime.*
 
 ### Option B: Running on Kaggle Notebooks
@@ -111,7 +110,7 @@ jupyter notebook Loan_Default_Prediction_Capstone.ipynb
 
 ---
 
-## 📁 7. Repository Structure
+## 7. Repository Structure
 
 ```text
 ├── data/
@@ -123,5 +122,5 @@ jupyter notebook Loan_Default_Prediction_Capstone.ipynb
 
 ---
 
-## 📜 License
+## License
 This project is open-source under the [MIT License](https://opensource.org/licenses/MIT).

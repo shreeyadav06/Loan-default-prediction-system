@@ -98,9 +98,6 @@ Models were trained and evaluated on an 80:20 stratified holdout split:
 
 ### Option C: Running Locally
 ```bash
-# Clone or navigate to the repository
-cd "ML internship"
-
 # Install required dependencies
 pip install pandas numpy scikit-learn matplotlib seaborn jupyter
 
